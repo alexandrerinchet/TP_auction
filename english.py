@@ -11,7 +11,7 @@ class EnglishAuction():
 
     def play(self):
         # Input opening bid
-        self.cli.display('Started auction of type: Blind')
+        self.cli.display('Started auction of type: English')
         opening_bid = self.cli.prompt('Please enter the amount for the opening bid:')
         opening_bid = int(opening_bid)
         self.cli.display(f"Opening bid is: {opening_bid}")
