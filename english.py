@@ -38,7 +38,7 @@ class EnglishAuction():
                 bid = self.cli.prompt(
                 f"Standing bid is {standing_bid}. {bidder} bids:"
             )
-                if bid != '':
+                if bid :
                     bid = int(bid)
                 else :
                     bid = 0
