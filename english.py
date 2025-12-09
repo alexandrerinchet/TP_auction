@@ -31,26 +31,22 @@ class EnglishAuction():
         standing_bid = opening_bid
         winner = None
         pass_count = 0
-        ibid = 0
-        while pass_count != len(bidders)-1 :
-            bidder=bidders[ibid]
-            bid = self.cli.prompt(
+
+        while pass_count != len(bidders) :
+            pass_count = 0
+            for bidder in bidders :
+                bid = self.cli.prompt(
                 f"Standing bid is {standing_bid}. {bidder} bids:"
             )
-            if bid != '':
-                bid = int(bid)
-            else :
-                bid = 0
-            if bid > standing_bid:
-                standing_bid = bid
-                winner = bidder
-                pass_count = 0
-            else :
-                pass_count += 1
-            if ibid == len(bidders)-1 :
-                ibid = 0
-            else :
-                ibid += 1
+                if bid != '':
+                    bid = int(bid)
+                else :
+                    bid = 0
+                if bid > standing_bid:
+                    standing_bid = bid
+                    winner = bidder
+                else :
+                    pass_count += 1
 
         # Display winner
         self.cli.display("\n~~~~~~~~\n")
